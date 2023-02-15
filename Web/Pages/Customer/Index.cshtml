@@ -1,0 +1,78 @@
+﻿@page "{transactionId}"
+@model Web.Pages.Customer.IndexModel
+@{
+}
+
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-6">
+                <h4 class="card-subtitle mb-2 text-muted" style="text-align: right;">TransactionId : </h4>
+            </div>
+            <div class="col-6">
+                <h4 class="card-subtitle mb-2 text-muted">@Model.Transaction.TransactionId</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h4 class="card-subtitle mb-2 text-muted" style="text-align: right;">AccountId : </h4>
+            </div>
+            <div class="col-6">
+                <h4 class="card-subtitle mb-2 text-muted">@Model.Transaction.AccountId</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h4 class="card-subtitle mb-2 text-muted" style="text-align: right;">Sender Name : </h4>
+            </div>
+            <div class="col-6">
+                <h4 class="card-subtitle mb-2 text-muted">@Model.Transaction.SenderName</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h4 class="card-subtitle mb-2 text-muted" style="text-align: right;">Receiver Name : </h4>
+            </div>
+            <div class="col-6">
+                <h4 class="card-subtitle mb-2 text-muted">@Model.Transaction.ReceiverName</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h4 class="card-subtitle mb-2 text-muted" style="text-align: right;">Receiver Account Number : </h4>
+            </div>
+            <div class="col-6">
+                <h4 class="card-subtitle mb-2 text-muted">@Model.Transaction.ReceiverAccountNo</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h4 class="card-subtitle mb-2 text-muted" style="text-align: right;">Amount : </h4>
+            </div>
+            <div class="col-6">
+                <h4 class="card-subtitle mb-2 text-muted">@Model.Transaction.Amount</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h4 class="card-subtitle mb-2 text-muted" style="text-align: right;">Transaction DateTime : </h4>
+            </div>
+            <div class="col-6">
+                <h4 class="card-subtitle mb-2 text-muted">@Model.Transaction.CreatedOn</h4>
+            </div>
+        </div>
+        <div class="row">
+    <div class="col-6">
+                <h4 class="card-subtitle mb-2 text-muted" style="text-align: right;">Status : </h4>
+            </div>
+            <div class="col-6">
+                <h4 class="card-subtitle mb-2 text-muted">@Model.Transaction.IsCompleted</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="mt-3">
+    <a href="/Customer/TransactionHistory" class="btn btn-sm btn-outline-dark">Transaction History</a>
+</div>

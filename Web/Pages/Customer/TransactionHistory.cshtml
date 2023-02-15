@@ -1,0 +1,45 @@
+﻿@page
+@model Web.Pages.Customer.TransactionHistoryModel
+@{
+}
+
+@if (Model.Transactions == null || !Model.Transactions.Any())
+{
+    <h4>No Payment Transactions Found!</h4>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Transaction Id</th>
+                <th scope="col">Account Id</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Sender Name</th>
+                <th scope="col">Receiver Name</th>
+                <th scope="col">Receiver Account No</th>
+                <th scope="col">Transaction Date</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var transaction in Model.Transactions)
+            {
+                <tr>
+                    <th scope="row"><a asp-page="Index" asp-route-transactionId="@transaction.TransactionId">@transaction.TransactionId</a> </th>
+                    <td>@transaction.AccountId</td>
+                    <td>@transaction.Amount</td>
+                    <td>@transaction.SenderName</td>
+                    <td>@transaction.ReceiverName</td>
+                    <td>@transaction.ReceiverAccountNo</td>
+                    <td>@transaction.CreatedOn</td>
+                    <td>@transaction.IsCompleted</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<div class="mt-3">
+    <a href="/" class="btn btn-sm btn-outline-dark">Home</a>
+</div>

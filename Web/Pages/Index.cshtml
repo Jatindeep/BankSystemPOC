@@ -1,0 +1,40 @@
+﻿@page
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Account Number</h5>
+                <h6 class="card-subtitle mb-2">@Model.AccountNumber</h6>
+                <div class="mt-2"></div>
+                <h5 class="card-title">Account Balance</h5>
+                <h6 class="card-subtitle mb-2">INR @Model.Balance.ToString("0.00")</h6>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Account Details</h5>
+                <a class="nav-link" asp-area="" asp-page="/Customer/TransactionHistory">Transaction History</a>
+                <a class="nav-link" asp-area="" asp-page="/Customer/TransferFunds">Transfer Funds</a>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div>
+            Please login to use our services. 
+            <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">Login</a>
+        </div>
+    }
+</div>
